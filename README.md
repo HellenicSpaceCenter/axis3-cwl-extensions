@@ -1,20 +1,18 @@
-# Introduction 
-TODO: Give a short introduction of your project. Let this section explain the objectives or the motivation behind this project. 
+# AXIS3 CWL extensions
 
-# Getting Started
-TODO: Guide users through getting your code up and running on their own system. In this section you can talk about:
-1.	Installation process
-2.	Software dependencies
-3.	Latest releases
-4.	API references
+CWL extension vocabulary for AXIS3 input UI annotations.
 
-# Build and Test
-TODO: Describe and show how to build your code and run the tests. 
+- [RDF vocabulary](axis3hub.ttl)
+- [Usage and CWL examples](docs/cwl-ui-extension.md)
 
-# Contribute
-TODO: Explain how other users and developers can contribute to make your code better. 
+The examples use `https://github.com/hellenicspacecenter/main/axis3hub.ttl`
+for `$schemas` and the same URL with a trailing `#` for the `axis3hub` namespace.
 
-If you want to learn more about creating good readme files then refer the following [guidelines](https://docs.microsoft.com/en-us/azure/devops/repos/git/create-a-readme?view=azure-devops). You can also seek inspiration from the below readme files:
-- [ASP.NET Core](https://github.com/aspnet/Home)
-- [Visual Studio Code](https://github.com/Microsoft/vscode)
-- [Chakra Core](https://github.com/Microsoft/ChakraCore)
+The vocabulary defines two boolean input annotations:
+
+- `axis3hub:hidden`: omit the input control.
+- `axis3hub:disabled`: display the input control without allowing edits.
+
+Hidden takes precedence when both annotations are true. These annotations
+control presentation; required inputs still need values, and execution-time
+restrictions require backend enforcement.

@@ -1,0 +1,14 @@
+@prefix axis3hub: <https://github.com/hellenicspacecenter/main/axis3hub.ttl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+axis3hub:hidden a rdf:Property ;
+    rdfs:label "Hidden input" ;
+    rdfs:comment "When true, AX3UI should omit the input control. This presentation annotation does not make the CWL input optional or restrict values submitted through an API." ;
+    rdfs:range xsd:boolean .
+
+axis3hub:disabled a rdf:Property ;
+    rdfs:label "Disabled input" ;
+    rdfs:comment "When true, AX3UI should display the input control without allowing edits. This presentation annotation does not enforce a fixed value at execution time. Hidden takes precedence when both annotations are true." ;
+    rdfs:range xsd:boolean .
